@@ -1,3 +1,6 @@
+SQFT_PER_GALLON = 350
+COST_PER_GALLON = 42
+
 def computeRoomArea(roomCount: int):
     pass
 
@@ -22,7 +25,7 @@ def computeCustomWallsArea():
 def computeGallons(area):
     pass
 
-def computePaintPrice(area):
+def computePaintPrice(area) -> float:
     pass
 
 
