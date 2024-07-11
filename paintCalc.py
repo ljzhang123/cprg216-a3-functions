@@ -1,9 +1,6 @@
 SQFT_PER_GALLON = 350
 COST_PER_GALLON = 42
 
-def computeRoomArea(roomCount: int):
-    pass
-
 def computeRectangleWallsArea():
     pass
 
@@ -28,6 +25,12 @@ def computeGallons(area):
 def computePaintPrice(area) -> float:
     pass
 
+# Basically the main function, most inputs are asked for here, 
+# and picking and choosing which functions are used
+def computeRoomArea(roomCount: int):
+    pass
 
 if __name__ == "__main__":
-    pass
+    roomCount = int(input("Welcome to Shiny Paint Company for indoor painting!\nHow many Rooms do you want to paint:"))
+    print("Thank you!")
+    computeRoomArea(roomCount)
