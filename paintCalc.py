@@ -7,11 +7,12 @@ def computeRectangleWallsArea():
 def computeRectangleArea(length, width):
     pass
 
-def computeSquareWallsArea():
-    pass
-
 def computeSquareArea(sideLength):
-    pass
+    return sideLength ** 2
+  
+def computeSquareWallsArea():
+    sideLength = float(input("Enter the length of one side of the room: "))
+    return 4 * computeSquareArea(sideLength)
 
 def computeWindowsDoorsArea():
     pass
