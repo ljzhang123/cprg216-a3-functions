@@ -2,10 +2,16 @@ SQFT_PER_GALLON = 350
 COST_PER_GALLON = 42
 
 def computeRectangleWallsArea():
-    pass
+    length = float(input('input a the length of the rectangle wall in feet:\n')) #user to enter length
+    width = float(input('input a the width of the rectangle wall in feet:\n')) #user to enter width
+    height = float(input('input a the height of the rectangle wall in feet: \n')) #user to enter height
 
-def computeRectangleArea(length, width):
-    pass
+    Surface_Area = (2*computeRectangleArea(length, height))+(2*computeRectangleArea(width, height))
+    return Surface_Area
+
+def computeRectangleArea(x, y): # sorry i'm using x and y variable here because i used the length and with on above function
+    area = x*y
+    return area 
 
 def computeSquareArea(sideLength):
     return sideLength ** 2
