@@ -27,18 +27,20 @@ def computeWindowsDoorsArea():
 def computeCustomWallsArea():
     pass
 
-def computeGallons(area):
-    pass
+def computeGallons(area) -> float:
+    return area / SQFT_PER_GALLON
 
 def computePaintPrice(area) -> float:
-    pass
+    volume = computeGallons(area)
+    return volume * COST_PER_GALLON
 
-# Basically the main function, most inputs are asked for here, 
-# and picking and choosing which functions are used
+# main loop
 def computeRoomArea(roomCount: int):
+    # if case is computeRoomArea(0), start backtracking up
     if roomCount == 0:
         return 0, 0, 0
     else:
+    # increment the function call count by 1 otherwise
         computeRoomArea.count += 1
     
     print(f"Room: {computeRoomArea.count}")
@@ -53,22 +55,26 @@ def computeRoomArea(roomCount: int):
     elif roomShape == "custom":
         wallsArea = computeCustomWallsArea()
 
-    windowsDoorsArea = computeWindowsDoorsArea()
-    paintArea = wallsArea - windowsDoorsArea
-    paintVolume = paintArea / SQFT_PER_GALLON
-    paintCost = paintVolume * COST_PER_GALLON
+    # get paint area, volume, and cost of this room
+    paintArea = wallsArea - computeWindowsDoorsArea()
+    paintVolume = computeGallons(paintArea)
+    paintCost = computePaintPrice(paintArea)
 
     print(f"\nFor Room: {computeRoomArea.count}, the area to be painted is {paintArea} square ft and will require {paintVolume:.2f} gallons to paint. This will cost the customer ${paintCost:.2f}\n")
 
+    # continue to calculate the remaining rooms with computeRoomArea(n-1)
     recursiveTotal = computeRoomArea(roomCount-1)
     
+    # add the accumulated totals from each lower depth function calls
     totalPaintArea = paintArea + recursiveTotal[0]
     totalPaintVolume = paintVolume + recursiveTotal[1]
     totalPaintCost = paintCost + recursiveTotal[2]
 
+    # print the final house totals if # of function calls is equal to number of rooms
     if computeRoomArea.count == roomCount:
         print(f"Area to be painted is {totalPaintArea} square ft and will require {totalPaintVolume:.2f} gallons to paint. This will cost the customer ${totalPaintCost:.2f}")
 
+    # return the accumulated totals for passing back to previous function calls
     return totalPaintArea, totalPaintVolume, totalPaintCost
     
 
