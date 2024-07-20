@@ -18,18 +18,18 @@ def computeSquareArea(sideLength):
     return sideLength ** 2
   
 def computeSquareWallsArea():
-    sideLength = float(input("Enter the length of one side of the room: "))
+    sideLength = float(input("Enter the length of one side of the room:\n"))
     return 4 * computeSquareArea(sideLength)
 
 def computeWindowsDoorsArea():
     #asks the user to enter the number of windows and doors in a room
-    numWindowsandDoors = int(input("How many windows and doors does the room contatin?\n"))
+    numWindowsandDoors = int(input("How many windows and doors does the room contain?\n"))
     totalAreaWinDoor = 0
 
     #asks the user for the length and width of each door/window, and calculates the sum of areas of all doors and windows in the room
     for i in range(numWindowsandDoors):
         lengthWinDoor = float(input("Enter window/door length for window/door {} in feet \n".format(i+1)))
-        widthWinDoor = float(input("Enter window/door width for window/door {} in feet \n ".format(i+1)))
+        widthWinDoor = float(input("Enter window/door width for window/door {} in feet \n".format(i+1)))
         totalAreaWinDoor += lengthWinDoor * widthWinDoor
 
     return totalAreaWinDoor
@@ -37,12 +37,12 @@ def computeWindowsDoorsArea():
 
 def computeCustomWallsArea():
     #asks the user to enter the number of walls in the room
-    numWalls = int(input("How many walls are there in the room? \n "))
+    numWalls = int(input("How many walls are there in the room? \n"))
     totalAreaWalls = 0
 
     #asks for height and length of each wall in order to calculate the room area, then returns room area
     for i in range(numWalls):
-        heightWall = float(input(f"Enter the height of wall {i+1} in feet\n "))
+        heightWall = float(input(f"Enter the height of wall {i+1} in feet\n"))
         lengthWall = float(input(f"Enter the length of wall {i+1} in feet\n"))
         totalAreaWalls += heightWall * lengthWall
     return totalAreaWalls
