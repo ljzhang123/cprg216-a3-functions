@@ -44,8 +44,8 @@ def computeCustomWallsArea():
     for i in range(numWalls):
         heightWall = float(input(f"Enter the height of wall {i+1} in feet\n "))
         lengthWall = float(input(f"Enter the length of wall {i+1} in feet\n"))
-        areaRoom += heightWall * lengthWall
-    return areaRoom
+        totalAreaWalls += heightWall * lengthWall
+    return totalAreaWalls
 
 
 def computeGallons(area) -> float:
