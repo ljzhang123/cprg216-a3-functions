@@ -3,9 +3,9 @@ COST_PER_GALLON = 42
 SHAPE = {"1":"rectangular", "2":"square", "3":"custom"}
 
 def computeRectangleWallsArea():
-    length = float(input('input a the length of the rectangle wall in feet:\n')) #user to enter length
-    width = float(input('input a the width of the rectangle wall in feet:\n')) #user to enter width
-    height = float(input('input a the height of the rectangle wall in feet: \n')) #user to enter height
+    length = float(input('Enter the length of the room in feet:\n')) #user to enter length
+    width = float(input('Enter the width of the room in feet:\n')) #user to enter width
+    height = float(input('Enter the height of the room in feet: \n')) #user to enter height
 
     Surface_Area = (2*computeRectangleArea(length, height))+(2*computeRectangleArea(width, height))
     return Surface_Area
