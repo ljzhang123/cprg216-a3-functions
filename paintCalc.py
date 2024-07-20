@@ -30,7 +30,7 @@ def computeWindowsDoorsArea():
     for i in range(numWindowsandDoors):
         lengthWinDoor = float(input("Enter window/door length for window/door {} in feet \n".format(i+1)))
         widthWinDoor = float(input("Enter window/door width for window/door {} in feet \n".format(i+1)))
-        totalAreaWinDoor += lengthWinDoor * widthWinDoor
+        totalAreaWinDoor += computeRectangleArea(lengthWinDoor, widthWinDoor)
 
     return totalAreaWinDoor
 
